@@ -79,15 +79,31 @@ function init() {
       type: 'input',
       message: 'Please describe you would like others to contribute to your project, otherwise input N.',
 
-    }
+    },
+    {
+      name: 'license',
+      type: 'list',
+      message: 'Which license would you like to use?',
+      choices: ['MIT', 'GPL', 'Apache', 'N/A'  ]
+    },
+    {
+      name: 'git',
+      type: 'input',
+      message:'Github username:',
+    },
 
   ])
-  .then((answers) => {
-    writeToFile('readme.md', answers.repoName)
-    writeToFile('readme.md', answers.description)
-    writeToFile('readme.md', answers.install)
-    writeToFile('readme.md', answers.usage)
-    writeToFile('readme.md', answers.contribution)
+  .then(({
+    repoName,
+    description,
+    install,
+    usage,
+    contribution,
+    license,
+
+
+
+    //writeToFile('readme.md', answers.repoName);
 
     // Use user feedback for... whatever!!
   })
@@ -97,7 +113,7 @@ function init() {
     } else {
       // Something else went wrong
     }
-  });
+  }));
 }
 
 // Function call to initialize app
