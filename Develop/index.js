@@ -84,7 +84,10 @@ function init() {
   ])
   .then((answers) => {
     writeToFile('readme.md', answers.repoName)
-    writeToFile
+    writeToFile('readme.md', answers.description)
+    writeToFile('readme.md', answers.install)
+    writeToFile('readme.md', answers.usage)
+    writeToFile('readme.md', answers.contribution)
 
     // Use user feedback for... whatever!!
   })
